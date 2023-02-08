@@ -1,0 +1,16 @@
+extends layout
+
+block content
+ .row
+    .col-4
+        form(action='/edit', method='post', enctype='application/x-www-form-urlencoded')
+            input(type='hidden', name='VID', value='#{dataItem}')
+            .form-group
+                label(for='input-title') New Title
+                input#input-title.form-control(type='text', name='title', placeholder='Enter the new title')
+            hr
+            .form-group
+                label(for='input-desc') New Description
+                input#input-desc.form-control(type='text', name='desc', placeholder='Enter the new description')
+            .form-group
+                input.btn.btn-primary.mt-3(type='submit', value='Submit')

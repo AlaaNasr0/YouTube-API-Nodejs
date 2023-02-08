@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .row 
+    each item, index in info.data.items
+      .col
+        a(id='vLink#{index}',href='/edit?id=' + JSON.stringify(item.id.videoId), class='card-link' style='text-decoration:none')
+          .card.m-3
+            img.card-img-top.mx-auto.d-block(src='#{item.snippet.thumbnails.high.url}')
+            .card-body.text-center
+              h5.card-title #{item.snippet.title}
+              p.card-text #{item.snippet.description}
